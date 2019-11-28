@@ -14,3 +14,6 @@
 ## basic Django
 - Execute the command for running django server: python manage.py runserver
 - Create super user: python manage.py createsuperuser
+- 'makemigrations' checks for changes on the data shape and creates a file describing the changes
+- 'migrate' applies the migrations to the database 
+- 'migrate' after 'makemigrations'
