@@ -3,7 +3,7 @@
 
 - I'll recap the course below
 
-## Env
+## Environment
 - Touch gitignore(for python) & README.md
 - Set up virtual env with pipenv & install django
 - You should always execute commands in a virtual environment. 
@@ -27,5 +27,8 @@
 - Tips for dividing app: When you explain the app, only one sentence. must not contain 'AND'. for example "rooms display, update, create, delete AND list edit, update..."
 
 ## App
-- Create app: django-admin startapp 'app_name'
-- app's name should be plural like 'rooms'
+- Create app with this command: django-admin startapp 'app_name'
+- App's name should be plural like 'rooms'
+- Name of files in app that you created should be same to first
+- Don't change app & file name. Observe the django rules.
+- You should not delete existing files in app. but you can add files in app like urls.py
