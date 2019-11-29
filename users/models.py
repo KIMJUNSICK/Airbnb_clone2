@@ -34,16 +34,10 @@ class User(AbstractUser):
 
     # You need to install python library called 'pillow' for processing image
     # 'null=' in db, 'blank' in form
-    avatar = models.ImageField(null=True, blank=True)
-    gender = models.CharField(
-        max_length=10, null=True, blank=True, choices=GENDER_CHOICES
-    )
-    bio = models.TextField(default="", null=True, blank=True)
-    birthday = models.DateField(null=True, blank=True)
-    language = models.CharField(
-        choices=LANGUAGE_CHOICES, blank=True, null=True, max_length=7
-    )
-    currency = models.CharField(
-        choices=CURRENCY_CHOICES, blank=True, null=True, max_length=3
-    )
+    avatar = models.ImageField(blank=True)
+    gender = models.CharField(max_length=10, blank=True, choices=GENDER_CHOICES)
+    bio = models.TextField(blank=True)
+    birthday = models.DateField(blank=True, null=True)
+    language = models.CharField(choices=LANGUAGE_CHOICES, blank=True, max_length=7)
+    currency = models.CharField(choices=CURRENCY_CHOICES, blank=True, max_length=3)
     superhost = models.BooleanField(default=False)

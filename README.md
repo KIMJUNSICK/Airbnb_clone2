@@ -28,7 +28,9 @@
 
 ## App
 - Create app with this command: django-admin startapp 'app_name'
+- Only in case that you registered app in setting, django can recognize your apps
 - App's name should be plural like 'rooms'
 - Name of files in app that you created should be same to first
 - Don't change app & file name. Observe the django rules.
 - You should not delete existing files in app. but you can add files in app like urls.py
+- The structure of app is largely like this: Model, View, Admin, Url & Templates
