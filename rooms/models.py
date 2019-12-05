@@ -10,6 +10,47 @@ from users import models as user_models
 # 4. about local app
 
 
+class AbstractItem(core_models.TimeStampedModel):
+
+    """ Abstract Item """
+
+    name = models.CharField(max_length=80)
+
+    class Meta:
+        abstract = True
+
+    def __str__(self):
+        return self.name
+
+
+class Amenity(AbstractItem):
+
+    """ Amenity Model Definition """
+
+    pass
+
+
+class Facility(AbstractItem):
+
+    """ Facility Model Definition """
+
+    pass
+
+
+class HouseRule(AbstractItem):
+
+    """ HouseRule Model Definition """
+
+    pass
+
+
+class RoomType(AbstractItem):
+
+    """ RoomType Model Definition """
+
+    pass
+
+
 class Room(core_models.TimeStampedModel):
 
     """ Room Model Definition """
@@ -28,3 +69,12 @@ class Room(core_models.TimeStampedModel):
     check_out = models.TimeField()
     instant_book = models.BooleanField(default=False)
     host = models.ForeignKey(user_models.User, on_delete=models.CASCADE)
+    room_type = models.ForeignKey(
+        RoomType, on_delete=models.CASCADE, null=True
+    )
+    amenities = models.ManyToManyField(Amenity)
+    facilities = models.ManyToManyField(Facility)
+    house_rules = models.ManyToManyField(HouseRule)
+
+    def __str__(self):
+        return self.name
