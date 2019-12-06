@@ -3,6 +3,11 @@
 
 - I'll recap the course below
 
+## Tool 
+- WSL(window subsystem linux)
+- VScode
+- Django 2.2.5
+
 ## Environment
 - Touch gitignore(for python) & README.md
 - Set up virtual env with pipenv & install django
