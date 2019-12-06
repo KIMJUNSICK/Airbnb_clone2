@@ -72,11 +72,10 @@ class RoomAdmin(admin.ModelAdmin):
     # this ftn is in admin, not model.
     # so this is not registered in db.
     def count_amenities(self, obj):
-        print(obj)  # return objects connected to registered model
+        # ex) RoomManager in Room.objects
+        # Manager get elements from db. developer don't have to use sql.
+        print(obj.host)  # return QuerySet that is like list, but more smart
         return obj.amenities.count()
-
-    # this rename column in list_display
-    count_amenities.short_description = "junsik"
 
 
 @admin.register(models.Photo)
