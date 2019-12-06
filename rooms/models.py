@@ -86,7 +86,7 @@ class Room(core_models.TimeStampedModel):
     instant_book = models.BooleanField(default=False)
     host = models.ForeignKey("users.User", on_delete=models.CASCADE)
     room_type = models.ForeignKey(
-        "RoomType", on_delete=models.CASCADE, null=True
+        "RoomType", on_delete=models.CASCADE, null=True, blank=True
     )
     amenities = models.ManyToManyField(Amenity, blank=True)
     facilities = models.ManyToManyField(Facility, blank=True)

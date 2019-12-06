@@ -9,6 +9,7 @@ class ConversationAdmin(admin.ModelAdmin):
 
     pass
 
+
 @admin.register(models.Message)
 class Message(admin.ModelAdmin):
 
